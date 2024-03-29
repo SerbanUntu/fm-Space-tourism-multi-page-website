@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen bg-home-desktop bg-cover relative">
+  <div class="w-screen h-screen bg-home-mobile md:bg-home-tablet lg:bg-home-desktop bg-cover relative">
     <PageHeader />
     <div class="flex flex-col gap-[24px] w-[450px] ml-[165px] bottom-[131px] absolute">
       <h5 class="uppercase">So, you want to travel to</h5>

@@ -6,14 +6,14 @@
 
 @layer base {
   html {
-    @apply text-white font-barlow text-[18px] leading-[1.15] bg-black font-regular;
+    @apply text-white font-barlow text-[18px] leading-[1.15] bg-black font-regular select-none overflow-hidden;
   }
 
   h1, h2, h3, h4, h6 {
     @apply font-bellefair;
   }
 
-  h5, small, nav p {
+  h5, small, nav p, nav strong {
     @apply font-barlow-condensed;
   }
 
@@ -45,11 +45,11 @@
     @apply text-[14px] tracking-[2.35px];
   }
 
-  nav p {
+  nav p, nav strong {
     @apply text-[16px] tracking-[2.7px];
   }
 
-  p {
+  p, strong {
     @apply leading-[32px];
   }
 }

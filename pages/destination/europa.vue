@@ -1,28 +1,24 @@
 <template>
-  <div>
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+  <div class="w-screen h-screen bg-destination-mobile md:bg-destination-tablet lg:bg-destination-desktop bg-cover relative">
+    <PageHeader />
+    01 Pick your destination
 
-  01 Pick your destination
+    Moon
+    Mars
+    Europa
+    Titan
 
-  Moon
-  Mars
-  Europa
-  Titan
+    Europa
 
-  Europa
+    The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
+    winter lover’s dream. With an icy surface, it’s perfect for a bit of 
+    ice skating, curling, hockey, or simple relaxation in your snug 
+    wintery cabin.
 
-  The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
-  winter lover’s dream. With an icy surface, it’s perfect for a bit of 
-  ice skating, curling, hockey, or simple relaxation in your snug 
-  wintery cabin.
+    Avg. distance
+    628 mil. km
 
-  Avg. distance
-  628 mil. km
-
-  Est. travel time
-  3 years
+    Est. travel time
+    3 years
   </div>
 </template>
