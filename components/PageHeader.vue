@@ -7,7 +7,7 @@ const route = useRoute()
       <img class="w-[48px] h-[48px]" src="/assets/images/shared/logo.svg" alt="Logo" />
     </NuxtLink>
     <div class="flex flex-row ml-auto w-full items-center justify-end">
-      <div class="h-px bg-white opacity-25 w-[473px] z-10" />
+      <Line />
       <nav class="flex flex-row h-[96px] w-[830px] gap-[48px] bg-header backdrop-blur-[32px] justify-center ml-[-30px]">
         <NuxtLink class="flex flex-row w-fit h-full items-center border-white border-b-[3px] border-opacity-0" to="/"
           :class="{ 'hover:border-opacity-50': route.path !== '/', 'border-opacity-100': route.path === '/' }">
