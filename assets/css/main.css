@@ -6,7 +6,7 @@
 
 @layer base {
   html {
-    @apply text-white font-barlow text-[18px] leading-[1.15] bg-black font-regular select-none overflow-hidden;
+    @apply text-white font-barlow text-[15px] md:text-[16px] xl:text-[18px] leading-[1.15] bg-black font-regular select-none overflow-hidden;
   }
 
   h1, h2, h3, h4, h6 {
@@ -18,19 +18,19 @@
   }
 
   h1 {
-    @apply text-[150px];
+    @apply text-[80px] md:text-[150px];
   }
 
   h2 {
-    @apply text-[100px];
+    @apply text-[56px] md:text-[80px] xl:text-[100px];
   }
 
   h3 {
-    @apply text-[56px];
+    @apply text-[24px] md:text-[40px] xl:text-[56px];
   }
 
   h4 {
-    @apply text-[32px];
+    @apply text-[16px] md:text-[24px] xl:text-[32px];
   }
 
   h6 {
@@ -38,7 +38,7 @@
   }
 
   h5 {
-    @apply text-[28px] tracking-[4.75px];
+    @apply text-[16px] tracking-[2.7px] md:text-[20px] md:tracking-[3.4px] xl:text-[28px] xl:tracking-[4.75px];
   }
 
   small {
@@ -46,10 +46,14 @@
   }
 
   nav p, nav strong {
-    @apply text-[16px] tracking-[2.7px];
+    @apply text-[14px] tracking-[2.35px] md:text-[16px] md:tracking-[2.7px];
   }
 
   p, strong {
-    @apply leading-[32px];
+    @apply leading-[25px] md:leading-[28px] xl:leading-[32px];
+  }
+
+  button {
+    @apply overflow-hidden;
   }
 }

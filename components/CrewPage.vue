@@ -31,21 +31,9 @@ const route = useRoute()
         company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel
         to space as a space tourist. </p>
       <nav class="flex flex-row gap-[24px] mt-auto mb-24">
-        <NuxtLink to="/crew/commander" class="rounded-full">
+        <NuxtLink v-for="(link, index) in ['/crew/commander', '/crew/specialist', '/crew/pilot', '/crew/engineer']" :key="index" :to="link" class="rounded-full">
           <button class="w-[15px] h-[15px] rounded-full bg-white"
-            :class="{ 'opacity-20': !route.path.includes('commander'), 'opacity-100': route.path.includes('commander') }" />
-        </NuxtLink>
-        <NuxtLink to="/crew/specialist" class="rounded-full">
-          <button class="w-[15px] h-[15px] rounded-full bg-white"
-            :class="{ 'opacity-20': !route.path.includes('specialist'), 'opacity-100': route.path.includes('specialist') }" />
-        </NuxtLink>
-        <NuxtLink to="/crew/pilot" class="rounded-full">
-          <button class="w-[15px] h-[15px] rounded-full bg-white"
-            :class="{ 'opacity-20': !route.path.includes('pilot'), 'opacity-100': route.path.includes('pilot') }" />
-        </NuxtLink>
-        <NuxtLink to="/crew/engineer" class="rounded-full">
-          <button class="w-[15px] h-[15px] rounded-full bg-white"
-            :class="{ 'opacity-20': !route.path.includes('engineer'), 'opacity-100': route.path.includes('engineer') }" />
+            :class="{ 'opacity-20': !route.path.includes(link.split('/')[2]), 'opacity-100': route.path.includes(link.split('/')[2]) }" />
         </NuxtLink>
       </nav>
     </section>
