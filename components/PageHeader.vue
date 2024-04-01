@@ -2,13 +2,13 @@
 const route = useRoute()
 </script>
 <template>
-  <div class="flex flex-row ml-[55px] relative top-[40px] items-center">
-    <NuxtLink class="rounded-full" to="/">
-      <img class="w-[48px] h-[48px]" src="/assets/images/shared/logo.svg" alt="Logo" />
+  <section class="flex flex-row ml-[55px] relative top-[40px] items-center">
+    <NuxtLink class="rounded-full flex shrink-0" to="/">
+      <img class="w-[48px] h-[48px] shrink-0" src="/assets/images/shared/logo.svg" alt="Logo" />
     </NuxtLink>
-    <div class="flex flex-row ml-auto w-full items-center justify-end">
+    <article class="flex flex-row ml-auto w-full items-center justify-end">
       <Line />
-      <nav class="flex flex-row h-[96px] w-[830px] gap-[48px] bg-header backdrop-blur-[32px] justify-center ml-[-30px]">
+      <nav class="flex flex-row h-[96px] w-[830px] gap-[48px] bg-header backdrop-blur-[32px] justify-center ml-[-30px] shrink-0">
         <NuxtLink class="flex flex-row w-fit h-full items-center border-white border-b-[3px] border-opacity-0" to="/"
           :class="{ 'hover:border-opacity-50': route.path !== '/', 'border-opacity-100': route.path === '/' }">
           <strong class="w-[29px]">00</strong>
@@ -33,6 +33,6 @@ const route = useRoute()
           <p class="uppercase">Technology</p>
         </NuxtLink>
       </nav>
-    </div>
-  </div>
+    </article>
+  </section>
 </template>

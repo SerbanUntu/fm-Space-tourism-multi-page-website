@@ -3,16 +3,16 @@ const route = useRoute()
 </script>
 
 <template>
-  <div class="w-full h-full px-[10vw] py-[5vw] flex flex-col justify-between">
+  <article class="w-full h-full px-[10vw] py-[5vw] flex flex-col justify-between">
     <h5 class="uppercase flex flex-row"><strong class="w-[54px] opacity-25">01</strong>Pick your destination</h5>
-    <div class="p-[5vw] w-full h-full flex flex-row justify-between items-center">
+    <section class="p-[5vw] w-full h-full flex flex-row justify-between items-center">
       <img class="w-[445px] h-[445px]" v-if="route.path.includes('moon')" src="/assets/images/destination/image-moon.webp" alt="The Moon" />
       <img class="w-[445px] h-[445px]" v-if="route.path.includes('mars')" src="/assets/images/destination/image-mars.webp" alt="The planet Mars" />
       <img class="w-[445px] h-[445px]" v-if="route.path.includes('europa')" src="/assets/images/destination/image-europa.webp"
         alt="Europa, satellite of Jupiter" />
       <img class="w-[445px] h-[445px]" v-if="route.path.includes('titan')" src="/assets/images/destination/image-titan.webp"
         alt="Titan, Saturn's largest satellite" />
-      <div class="flex flex-col w-[445px] gap-8">
+      <article class="flex flex-col w-[445px] gap-8">
         <nav class="flex flex-row gap-[32px]">
           <NuxtLink class="border-white border-b-[3px] border-opacity-0 h-10" :class="{'text-blue hover:border-opacity-50': !route.path.includes('moon'), 'text-white border-opacity-100': route.path.includes('moon')}" to="/destination/moon">
             <p class="uppercase">Moon</p>
@@ -45,23 +45,23 @@ const route = useRoute()
           hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.
         </p>
         <Line class="w-full" />
-        <div class="flex flex-row w-full justify-between">
-          <div class="flex flex-col gap-[12px]">
+        <section class="flex flex-row w-full justify-between">
+          <article class="flex flex-col gap-[12px]">
             <small class="uppercase text-blue">Avg. distance</small>
             <h6 v-if="route.path.includes('moon')" class="uppercase">384,400 km</h6>
             <h6 v-if="route.path.includes('mars')" class="uppercase">225 mil. km</h6>
             <h6 v-if="route.path.includes('europa')" class="uppercase">628 mil. km</h6>
             <h6 v-if="route.path.includes('titan')" class="uppercase">1.6 bil. km</h6>
-          </div>
-          <div class="flex flex-col gap-[12px]">
+          </article>
+          <article class="flex flex-col gap-[12px]">
             <small class="uppercase text-blue">Est. travel time</small>
             <h6 v-if="route.path.includes('moon')" class="uppercase">3 days</h6>
             <h6 v-if="route.path.includes('mars')" class="uppercase">9 months</h6>
             <h6 v-if="route.path.includes('europa')" class="uppercase">3 years</h6>
             <h6 v-if="route.path.includes('titan')" class="uppercase">7 years</h6>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          </article>
+        </section>
+      </article>
+    </section>
+  </article>
 </template>
