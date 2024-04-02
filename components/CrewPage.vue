@@ -1,5 +1,17 @@
 <script setup>
+import jsonData from '~/static/data.json'
 const route = useRoute()
+const crew = ref({})
+const links = ref([])
+
+jsonData.crew.forEach(object => {
+  let roleWords = object.role.split(' ')
+  let lastWord = roleWords[roleWords.length - 1]
+  if(lastWord.toLowerCase() === route.path.split('/')[2]) {
+    crew.value = object
+  }
+  links.value.push(`/crew/${lastWord.toLowerCase()}`)
+})
 </script>
 
 <template>
@@ -7,31 +19,12 @@ const route = useRoute()
     <h5 class="uppercase flex flex-row"><strong class="w-[54px] opacity-25">02</strong>Meet your crew</h5>
     <section class="flex flex-col gap-4 w-[25rem] h-full">
       <article class="flex flex-col gap-2 whitespace-nowrap">
-        <h4 v-if="route.path.includes('commander')" class="opacity-50 uppercase">Commander</h4>
-        <h4 v-if="route.path.includes('engineer')" class="opacity-50 uppercase">Flight Engineer</h4>
-        <h4 v-if="route.path.includes('pilot')" class="opacity-50 uppercase">Pilot</h4>
-        <h4 v-if="route.path.includes('specialist')" class="opacity-50 uppercase">Mission Specialist</h4>
-        <h3 v-if="route.path.includes('commander')" class="uppercase">Douglas Hurley</h3>
-        <h3 v-if="route.path.includes('engineer')" class="uppercase">Anousheh Ansari</h3>
-        <h3 v-if="route.path.includes('pilot')" class="uppercase">Victor Glover</h3>
-        <h3 v-if="route.path.includes('specialist')" class="uppercase">Mark Shuttleworth</h3>
+        <h4 class="opacity-50 uppercase">{{ crew.role }}</h4>
+        <h3 class="uppercase">{{ crew.name }}</h3>
       </article>
-      <p v-if="route.path.includes('commander')" class="text-blue">
-        Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He
-        launched into space for the third time as commander of Crew Dragon Demo-2. </p>
-      <p v-if="route.path.includes('engineer')" class="text-blue">
-        Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth
-        self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space. </p>
-      <p v-if="route.path.includes('pilot')" class="text-blue">
-        Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is
-        a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a
-        station systems flight engineer. </p>
-      <p v-if="route.path.includes('specialist')" class="text-blue">
-        Mark Richard Shuttleworth is the founder and CEO of Canonical, the
-        company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel
-        to space as a space tourist. </p>
+      <p class="text-blue">{{ crew.bio }}</p>
       <nav class="flex flex-row gap-[24px] mt-auto mb-24">
-        <NuxtLink v-for="(link, index) in ['/crew/commander', '/crew/specialist', '/crew/pilot', '/crew/engineer']" :key="index" :to="link" class="rounded-full">
+        <NuxtLink v-for="(link, index) in links" :key="index" :to="link" class="rounded-full">
           <button class="w-[15px] h-[15px] rounded-full bg-white"
             :class="{ 'opacity-20': !route.path.includes(link.split('/')[2]), 'opacity-100': route.path.includes(link.split('/')[2]) }" />
         </NuxtLink>
