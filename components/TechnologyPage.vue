@@ -33,12 +33,8 @@ jsonData.technology.forEach(object => {
         </section>
         <p class="text-blue">{{ technology.description }}</p>
       </article>
-      <img v-if="route.path.includes('capsule')" class="w-[515px] h-[527px] ml-auto relative bottom-20 hidden xl:block" src="/assets/images/technology/image-space-capsule-portrait.jpg" alt="Space capsule" />
-      <img v-if="route.path.includes('capsule')" class="w-full h-[170px] md:h-[370px] ml-auto relative bottom-20 block xl:hidden" src="/assets/images/technology/image-space-capsule-landscape.jpg" alt="Space capsule" />
-      <img v-if="route.path.includes('spaceport')" class="w-[515px] h-[527px] ml-auto relative bottom-20 hidden xl:block" src="/assets/images/technology/image-spaceport-portrait.jpg" alt="Spaceport" />
-      <img v-if="route.path.includes('spaceport')" class="w-full h-[170px] md:h-[370px] ml-auto relative bottom-20 block xl:hidden" src="/assets/images/technology/image-spaceport-landscape.jpg" alt="Space capsule" />
-      <img v-if="route.path.includes('vehicle')" class="w-[515px] h-[527px] ml-auto relative bottom-20 hidden xl:block" src="/assets/images/technology/image-launch-vehicle-portrait.jpg" alt="Carrier rocket" />
-      <img v-if="route.path.includes('vehicle')" class="w-full h-[170px] md:h-[370px] ml-auto relative bottom-20 block xl:hidden" src="/assets/images/technology/image-launch-vehicle-landscape.jpg" alt="Space capsule" />
+      <img class="w-[515px] h-[527px] ml-auto relative bottom-20 hidden xl:block" :src="technology.images.portrait" :alt="technology.name" />
+      <img class="w-full h-[170px] md:h-[370px] ml-auto relative bottom-20 block xl:hidden" :src="technology.images.landscape" :alt="technology.name" />
     </section>
   </article>
 </template>

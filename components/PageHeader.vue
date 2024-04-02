@@ -5,7 +5,7 @@ const showMenu = ref(false)
 <template>
   <section class="flex flex-row ml-[3vw] mr-[3vw] md:mr-0 relative top-[3vh] md:top-0 xl:top-[3vh] items-center">
     <NuxtLink class="rounded-full flex shrink-0" to="/">
-      <img class="w-[48px] h-[48px] shrink-0" src="/assets/images/shared/logo.svg" alt="Logo" />
+      <img class="w-[48px] h-[48px] shrink-0" src="/images/shared/logo.svg" alt="Logo" />
     </NuxtLink>
     <article class="flex flex-row ml-auto w-full items-center justify-end">
       <Line class="hidden xl:block" />
@@ -37,7 +37,7 @@ const showMenu = ref(false)
       </nav>
     </article>
     <button @click="showMenu = true">
-      <img class="block md:hidden" src="/assets/images/shared/icon-hamburger.svg" alt="Open hamburger menu" />
+      <img class="block md:hidden" src="/images/shared/icon-hamburger.svg" alt="Open hamburger menu" />
     </button>
   </section>
   <article
@@ -70,7 +70,7 @@ const showMenu = ref(false)
       </NuxtLink>
     </nav>
     <button class="absolute top-[5vh] right-[3vw]" @click="showMenu = false">
-      <img src="/assets/images/shared/icon-close.svg" alt="Close hamburger menu" />
+      <img src="/images/shared/icon-close.svg" alt="Close hamburger menu" />
     </button>
   </article>
 </template>

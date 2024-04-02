@@ -30,13 +30,6 @@ jsonData.crew.forEach(object => {
         </NuxtLink>
       </nav>
     </section>
-    <img v-if="route.path.includes('commander')" src="/assets/images/crew/image-douglas-hurley.webp"
-      alt="Commander Douglas Hurley" class="absolute bottom-0 right-[8vw]" />
-    <img v-if="route.path.includes('engineer')" src="/assets/images/crew/image-anousheh-ansari.webp"
-      alt="Flight Engineer Anousheh Ansari" class="absolute bottom-0 right-[8vw]" />
-    <img v-if="route.path.includes('pilot')" src="/assets/images/crew/image-victor-glover.webp"
-      alt="Pilot Victor Glover" class="absolute bottom-0 right-[8vw]" />
-    <img v-if="route.path.includes('specialist')" src="/assets/images/crew/image-mark-shuttleworth.webp"
-      alt="Mission Specialist Mark Shuttleworth" class="absolute bottom-0 right-[8vw]" />
+    <img :src="crew.images.webp" class="absolute bottom-0 right-[8vw]" :alt="crew.role + ' ' + crew.name" />
   </article>
 </template>
