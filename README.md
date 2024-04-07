@@ -27,7 +27,7 @@ Users are able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot](/public/images/screenshot.png)
 
 ### Links
 
@@ -46,12 +46,24 @@ Users are able to:
 
 ### What I learned
 
-Dynamic destination titles based on page names:
-```html
-<h2 class="uppercase">{{ route.path.split('/')[2] }}</h2>
+Import `.json` files and store the relevant data in an object reference:
+```js
+import jsonData from '~/static/data.json'
+const technology = ref({})
+// Technology pages are named after the last word of the technology name
+jsonData.technology.forEach(object => {
+  let nameWords = object.name.split(' ')
+  let lastWord = nameWords[nameWords.length - 1] 
+  if(lastWord.toLowerCase() === route.path.split('/')[2]) {
+    technology.value = object
+  }
+})
 ```
 
 ### Continued development
+
+- Improve the structure and layout of the pages so they look reasonable on all screens.
+- Update Figma file for more exact layout structure.
 
 ### Useful resources
 

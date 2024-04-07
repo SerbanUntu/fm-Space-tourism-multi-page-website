@@ -9,7 +9,7 @@ const entries = [
 ]
 </script>
 <template>
-  <section class="flex flex-row ml-[3vw] mr-[3vw] md:mr-0 relative top-[3vh] md:top-0 xl:top-[3vh] items-center">
+  <section class="flex flex-row ps-4 pe-4 md:pe-0 relative items-center">
     <NuxtLink class="rounded-full flex shrink-0" to="/">
       <img class="w-[48px] h-[48px] shrink-0" src="/images/shared/logo.svg" alt="Logo" />
     </NuxtLink>
@@ -19,7 +19,7 @@ const entries = [
         class="flex-row h-[96px] hidden md:flex md:w-[450px] xl:w-[830px] bg-header backdrop-blur-[32px] justify-between md:px-10  xl:px-20 ml-[-30px] shrink-0">
         <NuxtLink v-for="(entry, index) in entries" class="flex flex-row w-fit h-full items-center border-white border-b-[3px] border-opacity-0" :to="entry.link"
           :class="{ 'hover:border-opacity-50': !route.path.match(entry.regex), 'border-opacity-100': route.path.match(entry.regex) }">
-          <strong class="hidden w-[29px] xl:block">{{ '0' + index.toString() }}</strong>
+          <strong class="hidden w-6 xl:block">{{ '0' + index.toString() }}</strong>
           <p class="uppercase">{{ entry.link === '/' ? 'Home' : entry.link.slice(1) }}</p>
         </NuxtLink>
       </nav>
@@ -34,11 +34,11 @@ const entries = [
     <nav class="flex flex-col gap-4">
       <NuxtLink v-for="(entry, index) in entries" class="flex flex-row h-fit w-fit items-center border-white border-b-[3px] border-opacity-0" :to="entry.link"
         :class="{ 'hover:border-opacity-50': !route.path.match(entry.regex), 'border-opacity-100': route.path.match(entry.regex) }">
-        <strong class="w-[29px]">{{ '0' + index.toString() }}</strong>
+        <strong class="w-6">{{ '0' + index.toString() }}</strong>
         <p class="uppercase">{{ entry.link === '/' ? 'Home' : entry.link.slice(1) }}</p>
       </NuxtLink>
     </nav>
-    <button class="absolute top-[5vh] right-[3vw]" @click="showMenu = false">
+    <button class="absolute top-8 right-4" @click="showMenu = false">
       <img src="/images/shared/icon-close.svg" alt="Close hamburger menu" />
     </button>
   </article>
